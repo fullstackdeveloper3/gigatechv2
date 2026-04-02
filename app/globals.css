@@ -1,26 +1,372 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #060b18;
+  --color-foreground: #f1f5f9;
+  --color-accent: #06b6d4;
+  --color-accent-hover: #22d3ee;
+  --color-accent-glow: rgba(6, 182, 212, 0.4);
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-highlight: rgba(255, 255, 255, 0.2);
+  --color-surface: #0c1426;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   LIQUID GLASS SYSTEM
+   ============================================ */
+
+/* Base glass */
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  position: relative;
+}
+
+/* Top-edge liquid highlight */
+.glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Elevated glass - more prominent */
+.glass-elevated {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(6, 182, 212, 0.05) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 4px 16px rgba(6, 182, 212, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  position: relative;
+}
+
+.glass-elevated::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    rgba(6, 182, 212, 0.3),
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Subtle glass for smaller elements */
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Glass hover interaction */
+.glass-interactive {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-interactive:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 4px 16px rgba(6, 182, 212, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(16px)) {
+  .glass,
+  .glass-elevated {
+    background: rgba(12, 20, 38, 0.95);
+  }
+}
+
+/* ============================================
+   GLOW & ACCENT EFFECTS
+   ============================================ */
+
+.glow-accent {
+  box-shadow:
+    0 0 20px rgba(6, 182, 212, 0.3),
+    0 0 60px rgba(6, 182, 212, 0.1);
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(6, 182, 212, 0.5);
+}
+
+/* ============================================
+   ANIMATED BACKGROUND ORBS
+   ============================================ */
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.3), transparent 70%);
+  top: -10%;
+  right: -5%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent 70%);
+  bottom: -10%;
+  left: -5%;
+  animation-delay: -7s;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent 70%);
+  top: 40%;
+  left: 30%;
+  animation-delay: -14s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 10px) scale(1.02);
+  }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+/* WhatsApp button */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #2be673, #159e8a);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Accent button */
+.btn-accent {
+  background: linear-gradient(135deg, var(--color-accent), #0891b2);
+  color: #060b18;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px var(--color-accent-glow);
+}
+
+.btn-accent:hover {
+  box-shadow: 0 8px 32px var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Ghost / outline button */
+.btn-ghost {
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: var(--color-accent);
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-ghost:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+}
+
+/* ============================================
+   FLOATING WHATSAPP WIDGET
+   ============================================ */
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 20px rgba(37, 211, 102, 0.5),
+    0 0 40px rgba(37, 211, 102, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 8px 30px rgba(37, 211, 102, 0.6),
+    0 0 60px rgba(37, 211, 102, 0.3);
+}
+
+@keyframes pulse-whatsapp {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.5),
+      0 0 40px rgba(37, 211, 102, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.7),
+      0 0 60px rgba(37, 211, 102, 0.3);
+  }
+}
+
+/* ============================================
+   CATEGORY PILLS
+   ============================================ */
+
+.category-pill {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-pill-active {
+  background: linear-gradient(135deg, var(--color-accent), #0891b2);
+  color: #060b18;
+  box-shadow: 0 4px 16px var(--color-accent-glow);
+}
+
+/* ============================================
+   SPEC TABLE
+   ============================================ */
+
+.spec-row {
+  transition: background 0.2s;
+}
+
+.spec-row:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================
+   SECTION DIVIDER
+   ============================================ */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(6, 182, 212, 0.3),
+    transparent
+  );
+}
+
+/* ============================================
+   INPUT FOCUS GLOW
+   ============================================ */
+
+.input-glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s;
+}
+
+.input-glass:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+
+/* ============================================
+   BADGE
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  color: var(--color-accent);
 }

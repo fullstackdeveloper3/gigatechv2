@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1a2f"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g1)"/>
+  <!-- Premium laptop screen - wider -->
+  <rect x="80" y="45" width="240" height="155" rx="8" fill="#0c1426" stroke="url(#accent1)" stroke-width="2"/>
+  <rect x="88" y="52" width="224" height="140" rx="4" fill="#0f172a"/>
+  <!-- 3D/Engineering content -->
+  <polygon points="150,90 190,70 230,90 230,140 190,160 150,140" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="190,70 230,90 230,140 190,120" fill="#06b6d4" opacity="0.08"/>
+  <polygon points="150,90 190,70 190,120 150,140" fill="#06b6d4" opacity="0.05"/>
+  <!-- Toolbar hints -->
+  <rect x="260" y="65" width="40" height="6" rx="3" fill="#8b5cf6" opacity="0.3"/>
+  <rect x="260" y="78" width="35" height="6" rx="3" fill="#06b6d4" opacity="0.2"/>
+  <rect x="260" y="91" width="30" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <!-- Laptop base -->
+  <path d="M60 205 L80 200 L320 200 L340 205 L350 215 L50 215 Z" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="120" y="203" width="160" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <!-- Pro badges -->
+  <rect x="240" y="220" width="55" height="16" rx="3" fill="#8b5cf6" opacity="0.12"/>
+  <text x="267" y="231" font-family="system-ui" font-size="7" fill="#8b5cf6" text-anchor="middle" opacity="0.6">RTX 4070</text>
+  <rect x="175" y="220" width="55" height="16" rx="3" fill="#06b6d4" opacity="0.1"/>
+  <text x="202" y="231" font-family="system-ui" font-size="7" fill="#06b6d4" text-anchor="middle" opacity="0.5">i9 PRO</text>
+  <!-- Ambient glow -->
+  <circle cx="200" cy="120" r="90" fill="#8b5cf6" opacity="0.03"/>
+  <circle cx="180" cy="110" r="60" fill="#06b6d4" opacity="0.03"/>
+</svg>

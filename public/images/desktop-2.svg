@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1a2f"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g1)"/>
+  <!-- Office PC - compact case -->
+  <rect x="250" y="70" width="80" height="160" rx="6" fill="#0c1426" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <!-- Front panel -->
+  <rect x="265" y="85" width="50" height="20" rx="3" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="290" cy="95" r="3" fill="rgba(255,255,255,0.06)"/>
+  <!-- Power LED -->
+  <circle cx="290" cy="120" r="3" fill="#06b6d4" opacity="0.5"/>
+  <!-- Vents -->
+  <rect x="268" y="150" width="44" height="1.5" rx="0.75" fill="rgba(255,255,255,0.04)"/>
+  <rect x="268" y="156" width="44" height="1.5" rx="0.75" fill="rgba(255,255,255,0.04)"/>
+  <rect x="268" y="162" width="44" height="1.5" rx="0.75" fill="rgba(255,255,255,0.04)"/>
+  <!-- Monitor -->
+  <rect x="60" y="65" width="170" height="110" rx="6" fill="#0c1426" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <rect x="68" y="72" width="154" height="96" rx="3" fill="#0f172a"/>
+  <!-- Office screen content -->
+  <rect x="82" y="86" width="60" height="5" rx="2.5" fill="#06b6d4" opacity="0.35"/>
+  <rect x="82" y="98" width="125" height="4" rx="2" fill="#ffffff" opacity="0.08"/>
+  <rect x="82" y="108" width="110" height="4" rx="2" fill="#ffffff" opacity="0.06"/>
+  <rect x="82" y="118" width="100" height="4" rx="2" fill="#ffffff" opacity="0.04"/>
+  <!-- Spreadsheet grid hint -->
+  <rect x="82" y="132" width="125" height="25" rx="3" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <!-- Monitor stand -->
+  <rect x="130" y="175" width="25" height="18" fill="#0c1426"/>
+  <rect x="110" y="190" width="65" height="5" rx="2.5" fill="#0c1426" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <!-- Keyboard hint -->
+  <rect x="80" y="210" width="120" height="18" rx="4" fill="#0c1426" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <circle cx="200" cy="130" r="60" fill="#06b6d4" opacity="0.02"/>
+</svg>

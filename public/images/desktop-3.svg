@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1a2f"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+    <linearGradient id="pro1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g1)"/>
+  <!-- Workstation tower -->
+  <rect x="245" y="40" width="95" height="210" rx="8" fill="#0c1426" stroke="url(#pro1)" stroke-width="1.5"/>
+  <!-- AIO cooler visible -->
+  <circle cx="292" cy="80" r="22" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <circle cx="292" cy="80" r="15" fill="none" stroke="#06b6d4" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="292" cy="80" r="8" fill="none" stroke="#8b5cf6" stroke-width="0.5" opacity="0.3"/>
+  <!-- Status LEDs -->
+  <circle cx="270" cy="120" r="2.5" fill="#06b6d4" opacity="0.6"/>
+  <circle cx="280" cy="120" r="2.5" fill="#8b5cf6" opacity="0.4"/>
+  <!-- Vents -->
+  <rect x="260" y="145" width="55" height="1.5" rx="0.75" fill="rgba(255,255,255,0.04)"/>
+  <rect x="260" y="151" width="55" height="1.5" rx="0.75" fill="rgba(255,255,255,0.04)"/>
+  <rect x="260" y="157" width="55" height="1.5" rx="0.75" fill="rgba(255,255,255,0.04)"/>
+  <rect x="260" y="163" width="55" height="1.5" rx="0.75" fill="rgba(255,255,255,0.04)"/>
+  <!-- Wide monitor -->
+  <rect x="50" y="55" width="180" height="105" rx="6" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <rect x="57" y="61" width="166" height="92" rx="3" fill="#0f172a"/>
+  <!-- Video timeline content -->
+  <rect x="70" y="74" width="140" height="45" rx="3" fill="rgba(255,255,255,0.03)"/>
+  <rect x="75" y="79" width="50" height="35" rx="2" fill="#06b6d4" opacity="0.08"/>
+  <rect x="130" y="79" width="50" height="35" rx="2" fill="#8b5cf6" opacity="0.06"/>
+  <!-- Timeline bar -->
+  <rect x="70" y="128" width="140" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+  <rect x="70" y="128" width="80" height="6" rx="3" fill="#06b6d4" opacity="0.2"/>
+  <circle cx="150" cy="131" r="4" fill="#06b6d4" opacity="0.5"/>
+  <!-- Monitor stand -->
+  <rect x="125" y="160" width="30" height="18" fill="#0c1426"/>
+  <rect x="105" y="175" width="70" height="6" rx="3" fill="#0c1426" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Pro badge -->
+  <rect x="258" y="200" width="65" height="16" rx="3" fill="#8b5cf6" opacity="0.1"/>
+  <text x="290" y="211" font-family="system-ui" font-size="7" fill="#8b5cf6" text-anchor="middle" opacity="0.5">WORKSTATION</text>
+  <!-- Glow -->
+  <circle cx="292" cy="130" r="50" fill="#8b5cf6" opacity="0.03"/>
+</svg>

@@ -1,5 +1,12 @@
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SectionHeading from "@/components/SectionHeading";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "من نحن | گيگا تك",
+  description:
+    "تعرف على گيگا تك - متجر متخصص في تقنيات الحاسبات و كاميرات المراقبة والطابعات في كركوك، العراق.",
+};
 
 export default function AboutPage() {
   return (

@@ -1,230 +1,228 @@
-Act as a professional front‑end web developer. Build a **static product‑showcase website** for the computer and CCTV shop **"Giga Tech" (گيگا تك)** based in Kirkuk, Iraq.
+Act as a professional front‑end web developer building a **static e‑commerce–style website** for **"GigaTech" (گيگا تك)**, a computer and CCTV shop in Kirkuk, Iraq.
+
+You must:
+- Keep the **exact visual style** (dark‑tech theme, **liquid‑glass effect**, typography, colors) of the current site:
+  https://fullstackdeveloper3.github.io/gigatech/
+- Use the **information structure and product layout** from:
+  https://store.alnabaa.com/?srsltid=AfmBOopG175p8FGFxor-86QeK6pQEa3-E4kPmuQuypIX2t94ZnD_4_4l
+- Generate a **Next.js static site** (with `output: "export"`), using **Tailwind CSS** and **plain CSS** for the liquid‑glass effects.
 
 ----------------------------------------
 1. PROJECT OVERVIEW
 ----------------------------------------
-- Client: Giga Tech / گيگا تك – تقنيات الحاسبات و كاميرات المراقبة والطابعات.
-- Location: Kirkuk, Iraq.
-- Business type: Small tech store selling:
-  - Laptops (gaming, engineering, general‑use).
-  - Desktop PCs.
-  - CCTV cameras and kits.
-  - Printers and accessories.
-- Goal for this version: a **static, lead‑generation website** (no checkout, no backend).  
-  - Users look at products, click WhatsApp, and contact the store.
+- Client: GigaTech / گيگا تك – متجر لتقنيات الحاسبات و كاميرات المراقبة والطابعات في كركوك.
+- Goal: Rebuild the current GigaTech site into a **more structured, product‑focused static website**:
+  - Keep the **liquid‑glass cards, dark theme, Arabic layout, and WhatsApp CTAs**.
+  - Improve layout and data structure to match **Al‑Nabaa’s product‑info style**.
+- Constraints:
+  - Static only (no backend, no login, no checkout).
+  - Deployable to GitHub Pages (Next.js static export).
 
 ----------------------------------------
-2. GOALS & SUCCESS CRITERIA
+2. DESIGN STYLE (keep existing, evolve)
 ----------------------------------------
-- Result: a **fully static, responsive website** that:
-  - Looks modern and professional (tech‑store style).  
-  - Uses **liquid‑glass / glassmorphism UI** on key sections (see style section below).  
-  - Shows clear product cards with prices, images, and short specs.  
-  - Lets users contact Giga Tech via WhatsApp from every page.  
-- Success check:
-  - All pages load fast (no heavy frameworks required; keep it light).  
-  - Arabic text is readable and properly aligned (RTL‑friendly structure).  
-  - Liquid‑glass elements do not hurt legibility or performance.
-
-----------------------------------------
-3. TARGET AUDIENCE
-----------------------------------------
-- Individual consumers:
-  - Gamers, students, office workers in Kirkuk and nearby cities.
-- Small businesses:
-  - Offices and shops needing PCs, CCTV, and printers.  
-- Users are mostly on **mobile phones** (Android + WhatsApp).
-
-----------------------------------------
-4. BRAND & STYLE GUIDE
-----------------------------------------
-Language:
-- Primary language: **Arabic** (all headings, paragraphs, labels).
-- Keep technical terms in English when appropriate (e.g., “CPU”, “RAM”, “SSD”).
-
-Color & theme:
-- Main theme: **dark‑tech / gaming style**.
-  - Background: dark blue or black (e.g., `#0f172a` or `#000000`).
+Visual style:
+- Keep the **dark‑tech theme** from the current GigaTech site:
+  - Background: dark blue or black (`#0f172a` or similar).
   - Text: light white or light gray (`#f1f5f9`).
-  - Accents: blue or cyan for buttons / highlights.
+  - Accent colors from the current site (e.g., cyan, blue).
+- Keep **liquid‑glass / glassmorphism effect** on:
+  - Product cards.
+  - Hero banner subtitle / WhatsApp CTA.
+  - Small floating contact box.
+- Rules for liquid‑glass:
+  - Background: `rgba(255, 255, 255, 0.1)`.
+  - Border: `1px solid rgba(255, 255, 255, 0.2)`.
+  - Box‑shadow: `0 8px 32px rgba(0, 0, 0, 0.1)`.
+  - `backdrop‑filter: blur(8px)` where supported.
+  - Top‑edge highlight to simulate “liquid” surface.
+  - Text inside glass must be white or light, high contrast.
 
-Font:
-- Primary: system‑UI fonts (e.g., `system-ui`, `-apple-system`, `Segoe UI`, `Roboto`) for Arabic.
-- As a fallback: use simple sans‑serif to ensure Arabic renders well.
+Language:
+- Primary language: **Arabic** (all visible text, headings, labels).
+- Technical terms (CPU, RAM, SSD, GPU, ROM, etc.) can stay in **English**.
 
-Liquid‑glass effect (where to use):
-- ✅ Product cards (product grid and product list).
-- ✅ Hero banner subtitle / WhatsApp CTA card.
-- ✅ Small floating contact box (WhatsApp / phone).
-- ❌ NOT used on:
-  - Entire background.
-  - Navigation bar (keep navbar solid or semi‑transparent, not full‑glass).
-  - Long paragraphs of text.
-
-Liquid‑glass rules (CSS‑like behavior):
-- Use **glassmorphism / liquid‑glass style**:
-  - `background: rgba(255, 255, 255, 0.1);`.
-  - `border: 1px solid rgba(255, 255, 255, 0.2);`.
-  - `box‑shadow: 0 8px 32px rgba(0, 0, 0, 0.1);`.
-  - `backdrop‑filter: blur(8px);` (for supported browsers).
-- Add a **top‑edge highlight** (soft top border) to simulate a “liquid” surface.
-- Text inside glass elements must be:
-  - White or light.
-  - Sufficient contrast (no light gray on almost‑transparent).
-  - Not overlapping busy background images.
+RTL layout:
+- Use `dir="rtl"` on `html` or `body`.
+- Adjust layout (cards, text, buttons) to be RTL‑friendly.
 
 ----------------------------------------
-5. PAGES & STRUCTURE
+3. PAGES & STRUCTURE (drawn from Al‑Nabaa + GigaTech)
 ----------------------------------------
-Build the following static pages:
-- Home page
-- Products page (list all products with categories)
-- Product detail page
-- About page
-- Contact page
+Build the following pages (static Next.js):
 
-Routing:
-- URL structure (clean, static):
-  - `/` → Home
-  - `/products` → Products list
-  - `/products/[id]` → Product detail (e.g., `/products/laptop-1`)
-  - `/about` → About
-  - `/contact` → Contact
+1. Home page (`/`)
+   - Hero section:
+     - Arabic title: "گيگا تك لتقنيات الحاسبات و كاميرات المراقبة والطابعات".
+     - Subtitle: "عروض لابتوبات للألعاب والبرامج الهندسية".
+     - WhatsApp button: "تواصل معنا عبر واتساب".
+   - Featured products grid (4–8 cards) of:
+     - Laptops (gaming, engineering, general).
+     - Desktop PCs.
+     - CCTV cameras / kits.
+     - Printers (optional).
+   - Brief Arabic paragraph about GigaTech (2–3 lines).
+
+2. Products page (`/products`)
+   - Category filters (buttons):
+     - "لابتوبات"
+     - "كمبيوترات"
+     - "كاميرات المراقبة"
+     - "طابعات"
+   - Product grid:
+     - Each card:
+       - Image.
+       - Title in Arabic (e.g., "لابتوب للألعاب والبرامج الهندسية").
+       - Price in IQD (e.g., "1,200,000 IQD").
+       - Short specs (CPU, RAM, Storage) in one line, mixed Arabic/English where natural.
+       - Liquid‑glass effect (card background, border, blur).
+       - WhatsApp button: "طلب الاستفسار".
+
+3. Product detail page (`/products/[id]`)
+   - Large product image.
+   - Title + price (same as card).
+   - Specs table:
+     - Labels in Arabic, values in Arabic + English tech terms:
+       - "المعالج": "Intel Core i7‑13620H".
+       - "الرام": "16 GB DDR5".
+       - "التخزين": "1 TB SSD".
+       - "شاشة": "15.6\" FHD".
+       - "الضمان": "12 شهر".
+   - Section: "الوصف" (Arabic description).
+   - WhatsApp button: "تواصل معنا للطلب".
+
+4. About page (`/about`)
+   - Short Arabic paragraph about GigaTech (when they started, services offered).
+   - Location: "كركوك، العراق".
+
+5. Contact page (`/contact`)
+   - Phone number (click‑to‑call).
+   - WhatsApp button (opens WhatsApp with pre‑filled Arabic message).
+   - Address line.
+   - Optional: simple contact form (name, phone, message) – can be static.
 
 ----------------------------------------
-6. CONTENT & DATA STRUCTURE
+4. DATA STRUCTURE (inspired by Al‑Nabaa, but yours)
 ----------------------------------------
-Treat all products as **static data** (JSON or JS file).
+Products should be represented as **static JSON** (e.g., `data/products.json`).
 
-Product data structure (example):
+Each product object should look like:
+
 {
   "id": "laptop-1",
   "category": "laptop",
   "title": "لابتوب للألعاب والبرامج الهندسية",
   "price": "1,200,000 IQD",
   "img": "/images/laptop-1.jpg",
-  "shortSpecs": "Intel Core i7, 16 GB RAM, 512 GB SSD",
+  "shortSpecs": "Intel Core i7, 16 GB RAM, 1 TB SSD",
   "fullSpecs": [
-    { "label": "المعالج", "value": "Intel Core i7‑12xxx" },
+    { "label": "المعالج", "value": "Intel Core i7‑13620H" },
     { "label": "الرام", "value": "16 GB DDR5" },
-    { "label": "التخزين", "value": "512 GB SSD" },
-    { "label": "نظام التشغيل", "value": "Windows 11" },
+    { "label": "التخزين", "value": "1 TB SSD" },
+    { "label": "شاشة", "value": "15.6\" FHD" },
     { "label": "الضمان", "value": "12 شهر" }
-  ]
+  ],
+  "description": "لابتوب قوي للألعاب وبرامج الهندسة ..."
 }
 
-Pages content:
-- Home:
-  - Hero banner with:
-    - Arabic title: "گيگا تك لتقنيات الحاسبات و كاميرات المراقبة والطابعات".
-    - Subtitle: "عروض لابتوبات للألعاب والبرامج الهندسية".
-    - WhatsApp button: "تواصل معنا عبر واتساب".
-  - Featured products grid (6–8 products).
-  - Small “About Giga Tech” paragraph (2–3 lines).
-- Products:
-  - Category filter buttons:  
-    - "لابتوبات"  
-    - "كمبيوترات"  
-    - "كاميرات المراقبة"  
-    - "طابعات"  
-  - Product grid (all products).
-- Product detail:
-  - Large image.
-  - Title, price, short specs.
-  - Section: "المواصفات الكاملة" in table format.
-  - WhatsApp button: "تواصل معنا للطلب".
-- About:
-  - Short Arabic paragraph about Giga Tech.
-  - Location line: " Kirkuk, Iraq".
-- Contact:
-  - Phone number (with click‑to‑call).
-  - WhatsApp button (click‑to‑chat, opens WhatsApp with pre‑filled message).
-  - Address line.
-  - Optional: simple contact form (name, phone, message) but submit behavior is not required (can be static / placeholder).
+Pages that must use this data:
+- Home (featured products).
+- Products (all products + category filter).
+- Product detail (one product + full specs + WhatsApp button).
+
+Al‑Nabaa‑style influence:
+- Use **clear label–value pairs** for specs (like Al‑Nabaa) but present them inside **your liquid‑glass cards**, not plain text.
 
 ----------------------------------------
-7. DESIGN & UX SPECIFICS
+5. LAYOUT & UX SPECIFICS
 ----------------------------------------
-- Layout:
-  - Clean, grid‑based layout.
-  - Product cards in a responsive grid (2–4 columns on desktop, 1–2 on mobile).
-- Responsiveness:
-  - Must be mobile‑first.
-  - Works well on:
-    - Mobile (360–414 px).
-    - Tablet (768 px).
-    - Desktop (1024 px+).
-- Navigation:
-  - Fixed or sticky navbar with:
-    - Logo/text: "گيگا تك".
-    - Links: "الرئيسية", "المنتجات", "من نحن", "اتصل بنا".
-    - WhatsApp button in navbar (optional).
-- CTA:
-  - Every page has at least one WhatsApp button:
-    - Arabic text: "تواصل معنا عبر واتساب".
-    - Opens WhatsApp link like:
-      `https://wa.me/964XXXXXXXX?text=مرحباً%2C%20أريد%20الاستفسار%20عن%20منتج%20XYZ`
-    - Message text: "أريد الاستفسار عن منتج: [اسم المنتج]" (for product pages; general on other pages).
+Navigation:
+- Fixed or sticky navbar:
+  - Logo/text: "گيگا تك".
+  - Links: "الرئيسية", "المنتجات", "من نحن", "اتصل بنا".
+  - Optional WhatsApp button in navbar (same style as existing).
 
-Liquid‑glass visual rules:
-- Only on:
-  - Product cards.
-  - Hero banner subtitle / WhatsApp CTA.
-  - Contact box.
-- Behavior:
-  - Background blur only if performance allows.
-  - If blur is not supported, fall back to solid‑glass‑like card (no blur, still light border + light background).
-  - No full‑page glass background.
+Responsive:
+- Mobile‑first:
+  - 1–2 product cards per row on mobile.
+  - 3–4 on tablet; 4 on desktop.
+- Text is readable at small screen sizes; buttons are large enough to tap.
+
+WhatsApp CTAs:
+- On every page, at least one WhatsApp button:
+  - Arabic: "تواصل معنا عبر واتساب".
+  - URL: `https://wa.me/964XXXXXXXXX?text=أريد%20الاستفسار%20عن%20منتج%3A%20[اسم_المنتج]` (or generic on non‑product pages).
+
+Hero / liquid‑glass sections:
+- Keep the **hero vibe** from your current site (big title + WhatsApp).
+- But make product info **as clear and structured** as Al‑Nabaa:
+  - Each product card has:
+    - Title.
+    - Price (IQD).
+    - 1–2 short lines of key specs (CPU, RAM, Storage).
+    - Liquid‑glass card background + image.
 
 ----------------------------------------
-8. FUNCTIONALITY (STATIC VERSION)
+6. FUNCTIONALITY (STATIC ONLY)
 ----------------------------------------
-- No user accounts, login, or admin panel.
-- No real database or backend.
-- No real checkout; no payment or order system.
-- Static product data loaded from a JSON file or JS module.
-- No search bar (later phase feature).
-- No filters by GPU/RAM (later phase); only category filter (laptop / PC / CCTV / printer).
+No backend. Static features only:
+- Product list filtered by category (client‑side JS only).
+- Product detail (no dynamic loading; all products in static JSON).
+- WhatsApp click‑to‑chat.
+- Click‑to‑call.
 
-Whitelisted features:
-- WhatsApp click‑to‑chat link.
-- Click‑to‑call phone number.
-- Simple contact form (no server logic needed; can be static HTML).
+Do NOT implement:
+- Login / user accounts.
+- Admin panel.
+- Real checkout, payment, or shopping cart (can be added later).
 
 ----------------------------------------
-9. TECH STACK & CONSTRAINTS
+7. TECH STACK & OUTPUT
 ----------------------------------------
 Front‑end:
-- Option 1 (recommended): **Next.js (static export)**  
-  - Folder structure: `pages/`, `public/`, `components/`.  
-- Option 2: pure **HTML + CSS + JS** (no frameworks) if you prefer maximum simplicity.
+- Framework: **Next.js** (with `output: "export"` for static‑site generation).
+- Styling:  
+  - **Tailwind CSS** for layout, spacing, responsive.  
+  - Pure **CSS** for liquid‑glass effects (backdrop‑filter, borders, gradients).
+- Hosting‑ready:
+  - Must be buildable with `npm run build && next build && next export`.
+  - Output in a `out/` folder suitable for GitHub Pages.
 
-Styling:
-- Use **Tailwind CSS** if Next.js, or **pure CSS** if HTML‑only.  
-- If Tailwind: use it for layout, responsive, and basic styles; keep custom CSS only for liquid‑glass effects.
+Folder structure example:
 
-Hosting:
-- Assume static hosting (Vercel, Netlify, GitHub Pages). No backend server needed.
-
-Performance:
-- Keep bundle size small.
-- Optimize images (use example placeholder images; paths like `/images/[name].jpg`).
-
-No integrations for:
-- No CMS.
-- No content management.
-- No analytics (unless you explicitly add later).
+my-gigatech-site/
+├── pages/
+│   ├── index.js          (Home)
+│   ├── products.js       (Products list)
+│   ├── products/[id].js  (Product detail)
+│   ├── about.js
+│   └── contact.js
+├── public/
+│   └── images/
+└── data/
+    └── products.json
 
 ----------------------------------------
-10. OUTPUT FORMAT
+8. DESIGN–PRESERVING INSTRUCTIONS
 ----------------------------------------
-Generate a complete, static project structure that includes:
-- All required pages as components or HTML files.
-- One folder for product data (e.g., `data/products.json` or `data/products.js`).
-- One folder for images (e.g., `public/images/`).
-- Clear folder structure for:
-  - Components (if using React / Next.js).
-  - CSS / Tailwind config (if using Tailwind).
-- Example product page with at least one product rendered.
+- Do NOT change the core **visual identity** of your current GigaTech site:
+  - Keep the **colors, fonts, button styles, WhatsApp button style**.
+  - Keep the **same Arabic text and slogans** (only improve layout).
+- Only evolve:
+  - Product list layout (like Al‑Nabaa’s clarity) but in **your cards**.
+  - Information structure (specs as key–value table, price in clear IQD).
+- Make the site:
+  - **More organized** (like Al‑Nabaa’s product info).
+  - **Even more modern** (keep your liquid‑glass) and **mobile‑friendly**.
 
-Document the structure in plain text (e.g.):
+----------------------------------------
+OUTPUT:
+- Generate a complete Next.js project:
+  - All pages as React components.
+  - One JSON file for products.
+  - One folder for images.
+  - One folder for CSS (for liquid‑glass and custom styles).
+- Output the folder structure and example code for at least:
+  - Home page.
+  - Product card component.
+  - Product detail page.

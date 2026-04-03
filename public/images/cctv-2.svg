@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1a2f"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g1)"/>
+  <!-- 8 cameras in 2 rows -->
+  <g opacity="0.9">
+    <!-- Row 1 -->
+    <g transform="translate(40, 40) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+    <g transform="translate(120, 40) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+    <g transform="translate(200, 40) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+    <g transform="translate(280, 40) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+    <!-- Row 2 -->
+    <g transform="translate(40, 105) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+    <g transform="translate(120, 105) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+    <g transform="translate(200, 105) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+    <g transform="translate(280, 105) scale(0.7)">
+      <rect x="0" y="10" width="55" height="35" rx="5" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="18" cy="27" r="10" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+      <circle cx="18" cy="27" r="4" fill="#06b6d4" opacity="0.2"/>
+    </g>
+  </g>
+  <!-- NVR unit -->
+  <rect x="110" y="200" width="180" height="55" rx="6" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <rect x="130" y="215" width="60" height="5" rx="2.5" fill="#06b6d4" opacity="0.3"/>
+  <circle cx="265" cy="228" r="5" fill="#06b6d4" opacity="0.4"/>
+  <text x="200" y="243" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle">NVR 8CH</text>
+  <!-- 5MP badge -->
+  <rect x="160" y="175" width="80" height="18" rx="9" fill="#06b6d4" opacity="0.1" stroke="#06b6d4" stroke-width="0.5" stroke-opacity="0.2"/>
+  <text x="200" y="188" font-family="system-ui" font-size="9" fill="#06b6d4" text-anchor="middle" opacity="0.6">5 MP + PoE</text>
+</svg>

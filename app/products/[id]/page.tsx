@@ -83,7 +83,7 @@ export default async function ProductDetail({
           <div className="glass-elevated rounded-2xl sm:rounded-3xl aspect-square flex items-center justify-center relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${product.img}`}
+              src={product.img}
               alt={product.title}
               width={600}
               height={600}

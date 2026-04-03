@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1a2f"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g1)"/>
+  <!-- Laser MFP printer body -->
+  <rect x="90" y="90" width="220" height="120" rx="8" fill="#0c1426" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <!-- ADF/Scanner top -->
+  <rect x="95" y="60" width="210" height="35" rx="6" fill="#0c1426" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Control panel -->
+  <rect x="230" y="100" width="65" height="40" rx="4" fill="#0f172a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <rect x="238" y="108" width="50" height="18" rx="2" fill="rgba(6,182,212,0.05)"/>
+  <rect x="242" y="112" width="30" height="3" rx="1.5" fill="#06b6d4" opacity="0.3"/>
+  <rect x="242" y="119" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+  <!-- Buttons -->
+  <circle cx="244" cy="132" r="3" fill="#06b6d4" opacity="0.3"/>
+  <circle cx="256" cy="132" r="3" fill="rgba(255,255,255,0.06)"/>
+  <circle cx="268" cy="132" r="3" fill="rgba(255,255,255,0.06)"/>
+  <!-- Paper tray (output) -->
+  <rect x="110" y="100" width="105" height="8" rx="2" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <!-- Paper output -->
+  <rect x="130" y="85" width="80" height="20" rx="2" fill="#f1f5f9" opacity="0.06"/>
+  <rect x="140" y="89" width="40" height="2" rx="1" fill="rgba(0,0,0,0.15)"/>
+  <rect x="140" y="94" width="55" height="2" rx="1" fill="rgba(0,0,0,0.1)"/>
+  <!-- Paper tray (input) bottom -->
+  <rect x="110" y="195" width="180" height="15" rx="3" fill="#0c1426" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Laser badge -->
+  <rect x="120" y="150" width="70" height="20" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+  <text x="155" y="164" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.25)" text-anchor="middle">LASER</text>
+  <!-- WiFi indicator -->
+  <g transform="translate(200, 147)">
+    <path d="M0 12 Q8 4 16 12" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.3"/>
+    <path d="M3 9 Q8 5 13 9" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.4"/>
+    <circle cx="8" cy="13" r="1.5" fill="#06b6d4" opacity="0.5"/>
+  </g>
+</svg>

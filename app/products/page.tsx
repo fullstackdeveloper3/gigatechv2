@@ -77,7 +77,7 @@ export default function ProductsPage() {
         {/* Main layout: sidebar + grid */}
         <div className="lg:flex lg:gap-8 lg:items-start">
           {/* Filter sidebar — fixed drawer on mobile, static sidebar on desktop */}
-          <div className="lg:w-[260px] lg:shrink-0 lg:sticky lg:top-24">
+          <div className="lg:w-[260px] lg:shrink-0">
             <ProductFilters
               activeCategory={activeCategory}
               activeBrand={activeBrand}

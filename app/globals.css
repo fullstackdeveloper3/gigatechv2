@@ -377,3 +377,8 @@ body {
   border: 1px solid rgba(99, 102, 241, 0.25);
   color: #a5b4fc;
 }
+aside.glass-elevated
+{
+  position: fixed;
+  top: 60px;
+}

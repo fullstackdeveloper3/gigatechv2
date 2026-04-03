@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { WHATSAPP_LINK, PHONE_NUMBER } from "@/lib/constants";
 
 export default function Footer() {
@@ -31,19 +32,19 @@ export default function Footer() {
               <h4 className="text-sm font-semibold mb-4 text-foreground/70">روابط سريعة</h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <a href="/products" className="text-foreground/40 hover:text-accent transition-colors">
+                  <Link href="/products" className="text-foreground/40 hover:text-accent transition-colors">
                     المنتجات
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/about" className="text-foreground/40 hover:text-accent transition-colors">
+                  <Link href="/about" className="text-foreground/40 hover:text-accent transition-colors">
                     من نحن
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/contact" className="text-foreground/40 hover:text-accent transition-colors">
+                  <Link href="/contact" className="text-foreground/40 hover:text-accent transition-colors">
                     اتصل بنا
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

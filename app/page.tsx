@@ -2,6 +2,7 @@ import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
 
 export default function Home() {
   const featured = products.slice(0, 8);
@@ -48,12 +49,12 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <WhatsAppButton size="lg" />
-            <a
+            <Link
               href="/products"
               className="btn-ghost rounded-xl px-7 py-3.5 text-base font-medium"
             >
               تصفح المنتجات
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -91,12 +92,12 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/products"
             className="btn-ghost rounded-xl px-8 py-3 text-sm font-medium"
           >
             عرض جميع المنتجات
-          </a>
+          </Link>
         </div>
       </section>
 

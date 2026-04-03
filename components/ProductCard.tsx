@@ -29,7 +29,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <Link href={`/products/${product.id}`} className="relative block">
         <div className="aspect-[4/3] bg-gradient-to-br from-white/10 to-white/[0.03] flex items-center justify-center overflow-hidden">
           <Image
-            src={product.img}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${product.img}`}
             alt={product.title}
             width={400}
             height={300}

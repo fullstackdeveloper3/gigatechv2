@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Redirect to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Don't rewrite API requests or existing files/dirs
+RewriteCond %{REQUEST_URI} ^/api/ [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# For clean URLs: /products -> /products.html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Fallback to 404 page
+RewriteRule ^ /404.html [L]

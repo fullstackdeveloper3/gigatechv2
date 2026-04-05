@@ -1,9 +1,5 @@
 RewriteEngine On
 
-# Redirect to HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
 # Don't rewrite API requests or existing files/dirs
 RewriteCond %{REQUEST_URI} ^/api/ [OR]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
